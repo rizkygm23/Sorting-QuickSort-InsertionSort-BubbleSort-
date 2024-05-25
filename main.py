@@ -49,7 +49,7 @@ while True:
             print("Data yang terinput", array)
             pilih_Sort()
     else: 
-        print("Pilihan anda tidak valid", )
+        print("Pilihan anda tidak valid" )
         
 
 

@@ -23,10 +23,10 @@ def quicksort(arr):
             else:
                 right.append(i)
         
-        print("Pivot dipilih:", pivot)
-        print("Partisi kiri:", left)
-        print("Partisi tengah (pivot):", middle)
-        print("Partisi kanan:", right)
+        print("Nilai perbandingan", pivot)
+        print(f"====BAGIAN KIRI====\n{left}")
+        # print("Partisi tengah (pivot):", middle)
+        print(f"====BAGIAN KANAN====\n {right}")
         print()
         
         # Urutkan bagian kiri terlebih dahulu
