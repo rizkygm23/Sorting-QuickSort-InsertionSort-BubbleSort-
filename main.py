@@ -4,13 +4,12 @@ import insertion_sort as insert
 import bubble_sort as bubble
 import time
 default = [23,4,5,8,1,7,9]
-
+repeat = True 
 def pesan(msg):
     print("="*48)
     print(msg.center(48))
     print("="*48)
-    print("\n"*2)
-    
+    print("\n"*2) 
 def pilih_Sort(array):
     pesan("PILIH METODE SORTING")
     inputSort = input("Pilih Metode Sorting (1/2/3):\n1.Quick Sort\n2.Insertion Sort\n3.Bubble Sort\nSilahkan masukan pilihan anda  :")
@@ -47,7 +46,6 @@ def pilih_Sort(array):
     else: 
         print("Maaf inputan anda salah.... silahkan coba lagi :")
         pilih_Sort(array)
-
 def inputData():
         print("Pilih data yang mau anda gunakan ?\n 1. Data Default [23,4,5,8,1,7,9]\n 2. Data Inputan ")
         pilihan = input("Masukan pilihan anda ( 1/2 ) : ")
@@ -60,29 +58,41 @@ def inputData():
             array = []
             Jumlah = int(input("masukan berapa index array :"))
             for i in range(Jumlah):
-                inputArray = int(input(f"Masukkan array index ke-{i}: "))
+                inputArray = int(input(f"Masukkan array  ke-{i+1}: "))
                 array.append(inputArray)
                 print("Data yang terinput", array)
             pilih_Sort(array)    
         else: 
             print("Pilihan anda tidak valid" )
+            inputData()
                 
+def YesNo():
     
-    
-
-            
-
-while True:
-    print("="*48)
-    print("SELAMAT DATANG DI PROGRAM SORTING DARI KELOMPOK 1")
-    print("="*48)
-    inputData()
     ulangi = input("Mau melakukan sorting lagi ?(Y/N)")
     print("\n"*3)
     if ulangi.lower() == "n":
         pesan("TERIMA KASIH")
-        break
         
+        return False
+        
+    elif ulangi.lower()=="y":
+        return True
+        
+    else:
+        print("Inputan Salah ! Program Restarted")
+        
+        return True
+while repeat:
+    print("="*48)
+    print("SELAMAT DATANG DI PROGRAM SORTING DARI KELOMPOK 1")
+    print("="*48)
+    inputData()
+    repeat = YesNo()
+    
+    
+    
+
+
 
 
 

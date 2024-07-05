@@ -13,8 +13,4 @@ def insertion_sort(arr):
         
     return arr
 
-# input_array = input("Masukan Array : ")
-# arr = list(map(int, input_array.split()))
-# print("Iterasi awal:", arr)
-# insertion_sort(arr)
-# print("Iterasi Hasil:", arr)
+
