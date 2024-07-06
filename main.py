@@ -3,7 +3,8 @@ import quick_sort as quick
 import insertion_sort as insert
 import bubble_sort as bubble
 import time
-default = [23,4,5,8,1,7,9]
+import random
+default = [random.randint(1, 100) for _ in range(random.randint(6, 7))]
 repeat = True 
 def pesan(msg):
     print("="*48)
@@ -32,7 +33,6 @@ def pilih_Sort(array):
         pesan(f"HASIL SORTING :{sorted_array}")
         end_time = time.time()
         timeAkhir = (end_time - start_time)*1000
-        print("Insertion Sort time:", timeAkhir,"ms")
     elif inputSort == "3":
         pesan("METODE YANG DIPILIH ADALAH BUBBLE SORT")
         print("Array Awal:", array)
@@ -46,8 +46,9 @@ def pilih_Sort(array):
     else: 
         print("Maaf inputan anda salah.... silahkan coba lagi :")
         pilih_Sort(array)
+
 def inputData():
-        print("Pilih data yang mau anda gunakan ?\n 1. Data Default [23,4,5,8,1,7,9]\n 2. Data Inputan ")
+        print(f"Pilih data yang mau anda gunakan ?\n 1. Data Default {default}\n 2. Data Inputan ")
         pilihan = input("Masukan pilihan anda ( 1/2 ) : ")
         if pilihan == "1":
             array = default
@@ -56,7 +57,7 @@ def inputData():
             
         elif pilihan == "2":
             array = []
-            Jumlah = int(input("masukan berapa index array :"))
+            Jumlah = int(input("masukan berapa jumlah array :"))
             for i in range(Jumlah):
                 inputArray = int(input(f"Masukkan array  ke-{i+1}: "))
                 array.append(inputArray)
@@ -67,7 +68,6 @@ def inputData():
             inputData()
                 
 def YesNo():
-    
     ulangi = input("Mau melakukan sorting lagi ?(Y/N)")
     print("\n"*3)
     if ulangi.lower() == "n":
@@ -80,12 +80,10 @@ def YesNo():
         
     else:
         print("Inputan Salah ! Program Restarted")
-        
         return True
+    
 while repeat:
-    print("="*48)
-    print("SELAMAT DATANG DI PROGRAM SORTING DARI KELOMPOK 1")
-    print("="*48)
+    pesan("SELAMAT DATANG DI PROGRAM SORTING DARI KELOMPOK 1")
     inputData()
     repeat = YesNo()
     
